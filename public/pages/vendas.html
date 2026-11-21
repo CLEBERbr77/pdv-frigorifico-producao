@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDV Frigorífico | Vendas</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="logo">
+          <span class="logo-icon">✦</span>
+          <div>
+            <h2>FRIGORÍFICO</h2>
+            <span>GESTÃO PREMIUM</span>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <span class="menu-title">MENU PRINCIPAL</span>
+          <nav>
+            <a href="/" class="menu-item"><span>▦</span> Painel</a>
+            <a href="/pages/produtos.html" class="menu-item">
+              <span>◈</span> Produtos
+            </a>
+            <a href="/pages/categorias.html" class="menu-item">
+              <span>▤</span> Categorias
+            </a>
+            <a href="/pages/estoque.html" class="menu-item">
+              <span>⇄</span> Estoque
+            </a>
+            <a href="/pages/vendas.html" class="menu-item ativo">
+              <span>🛒</span> Vendas
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <span>PDV FRIGORÍFICO</span>
+          <small>Sistema de gestão comercial</small>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <span class="breadcrumb">OPERAÇÃO / VENDAS</span>
+            <h1>Frente de caixa</h1>
+            <p>Registre vendas e gerencie os pedidos do estabelecimento.</p>
+          </div>
+
+          <div class="topbar-info">
+            <span id="data-atual"></span>
+          </div>
+        </header>
+
+        <!-- SELEÇÃO DE PRODUTOS -->
+        <section class="painel">
+          <div class="painel-header">
+            <div>
+              <span class="subtitulo">ATENDIMENTO</span>
+              <h2>Selecionar produtos</h2>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="busca-produto">Pesquisar produto</label>
+            <input
+              type="search"
+              id="busca-produto"
+              placeholder="Digite o nome ou código do produto..."
+            />
+          </div>
+
+          <div class="tabela-container">
+            <table class="tabela-produtos">
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Código</th>
+                  <th>Preço</th>
+                  <th>Estoque</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="lista-produtos-venda">
+                <tr>
+                  <td colspan="5" class="mensagem-vazia">
+                    Carregando produtos...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- CARRINHO E PAGAMENTO -->
+        <section class="painel">
+          <div class="painel-header">
+            <div>
+              <span class="subtitulo">PEDIDO ATUAL</span>
+              <h2>Carrinho de compras</h2>
+            </div>
+          </div>
+
+          <div class="tabela-container">
+            <table class="tabela-produtos">
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Quantidade</th>
+                  <th>Preço unitário</th>
+                  <th>Subtotal</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="lista-carrinho">
+                <tr>
+                  <td colspan="5" class="mensagem-vazia">
+                    Nenhum produto adicionado ao carrinho.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="form-grid">
+            <div class="campo">
+              <label for="forma-pagamento">Forma de pagamento</label>
+              <select id="forma-pagamento" required>
+                <option value="">Selecione</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="cartao_credito">Cartão de crédito</option>
+                <option value="cartao_debito">Cartão de débito</option>
+              </select>
+            </div>
+
+            <div class="campo" id="campo-dinheiro-recebido" hidden>
+              <label for="dinheiro-recebido">Valor recebido em dinheiro</label>
+              <input
+                type="number"
+                id="dinheiro-recebido"
+                min="0"
+                step="0.01"
+                placeholder="Ex.: 50,00"
+              />
+            </div>
+
+            <div class="campo" id="campo-troco" hidden>
+              <label>Troco a devolver</label>
+              <h2 id="valor-troco">R$ 0,00</h2>
+            </div>
+
+            <div class="campo">
+              <label>Valor total da venda</label>
+              <h2 id="valor-total">R$ 0,00</h2>
+            </div>
+          </div>
+
+          <div class="form-acoes">
+            <button type="button" class="botao-principal" id="finalizar-venda">
+              Finalizar venda
+            </button>
+          </div>
+        </section>
+
+        <!-- COMPROVANTE DE VENDA -->
+        <section class="painel" id="comprovante-container" hidden>
+          <div class="painel-header">
+            <div>
+              <span class="subtitulo">VENDA FINALIZADA</span>
+              <h2>Comprovante de venda</h2>
+            </div>
+          </div>
+
+          <div id="conteudo-comprovante">
+            <!-- O JavaScript preencherá o comprovante aqui -->
+          </div>
+
+          <div class="form-acoes">
+            <button
+              type="button"
+              class="botao-principal"
+              id="imprimir-comprovante"
+            >
+              Imprimir comprovante
+            </button>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <span>PDV FRIGORÍFICO</span>
+          <span>Gestão, qualidade e tradição.</span>
+        </footer>
+      </main>
+    </div>
+
+    <script src="/js/vendas.js"></script>
+  </body>
+</html>

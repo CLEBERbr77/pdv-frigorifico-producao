@@ -1,0 +1,809 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap");
+
+/* =========================================
+   IDENTIDADE VISUAL
+========================================= */
+
+:root {
+  --vermelho: #8f2028;
+  --vermelho-escuro: #68171e;
+  --vermelho-claro: #f5e9e7;
+
+  --preto: #191817;
+  --cinza-escuro: #292725;
+  --cinza-medio: #57514b;
+
+  --creme: #f4f0e8;
+  --branco: #fffdf9;
+
+  --texto: #292725;
+  --texto-suave: #89837a;
+
+  --borda: #e8e1d7;
+  --dourado: #b89a62;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--creme);
+  color: var(--texto);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* =========================================
+   ESTRUTURA PRINCIPAL
+========================================= */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 38px 42px;
+}
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--preto);
+  color: var(--branco);
+  padding: 32px 22px;
+
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 38px;
+  border-bottom: 1px solid #393532;
+}
+
+.logo-icon {
+  color: var(--dourado);
+  font-size: 34px;
+}
+
+.logo h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  letter-spacing: 1.5px;
+}
+
+.logo span:last-child {
+  color: var(--dourado);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.menu-section {
+  margin-top: 38px;
+}
+
+.menu-title {
+  display: block;
+  color: #8d8780;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  margin: 0 10px 18px;
+}
+
+.menu-section nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 13px;
+
+  border-radius: 7px;
+  color: #bcb6ae;
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.menu-item span {
+  font-size: 18px;
+  width: 22px;
+  text-align: center;
+}
+
+.menu-item:hover {
+  background: #302b28;
+  color: white;
+}
+
+.menu-item.ativo {
+  background: var(--vermelho);
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 20px 8px 0;
+  border-top: 1px solid #393532;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-footer span {
+  color: var(--dourado);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.sidebar-footer small {
+  color: #8d8780;
+  font-size: 11px;
+}
+
+/* =========================================
+   CABEÇALHO DAS PÁGINAS
+========================================= */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.breadcrumb {
+  color: var(--vermelho);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.topbar h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  margin-top: 8px;
+}
+
+.topbar p {
+  color: var(--texto-suave);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.topbar-info {
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+/* =========================================
+   INDICADORES DO DASHBOARD
+========================================= */
+
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.card-indicador {
+  background: var(--branco);
+  padding: 24px 22px;
+  border: 1px solid var(--borda);
+  border-radius: 9px;
+  border-top: 3px solid var(--dourado);
+}
+
+.card-indicador.destaque {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+  color: white;
+}
+
+.card-indicador > span {
+  color: var(--texto-suave);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-indicador.destaque > span {
+  color: #f0dadd;
+}
+
+.card-indicador h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  margin: 16px 0 8px;
+}
+
+.card-indicador small {
+  color: var(--texto-suave);
+  font-size: 11px;
+}
+
+.card-indicador.destaque small {
+  color: #f0dadd;
+}
+
+/* =========================================
+   PAINÉIS
+========================================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+}
+
+.painel {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 9px;
+  padding: 25px;
+}
+
+.painel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.subtitulo {
+  color: var(--vermelho);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.painel-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  margin-top: 5px;
+}
+
+.link-painel {
+  color: var(--vermelho);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mensagem-vazia {
+  color: var(--texto-suave);
+  font-size: 12px;
+  padding: 15px 0;
+}
+
+/* =========================================
+   ATALHOS DO DASHBOARD
+========================================= */
+
+.atalhos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.atalho {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px;
+
+  border: 1px solid var(--borda);
+  border-radius: 7px;
+
+  transition: 0.2s;
+}
+
+.atalho:hover {
+  border-color: var(--vermelho);
+  transform: translateX(3px);
+}
+
+.atalho > span {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--vermelho-claro);
+  color: var(--vermelho);
+  border-radius: 7px;
+  font-size: 19px;
+}
+
+.atalho div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.atalho strong {
+  font-size: 12px;
+}
+
+.atalho small {
+  color: var(--texto-suave);
+  font-size: 10px;
+}
+
+/* =========================================
+   ESTOQUE BAIXO
+========================================= */
+
+.produto-estoque {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.produto-estoque:last-child {
+  border-bottom: none;
+}
+
+.produto-estoque > div,
+.estoque-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.produto-estoque strong {
+  font-size: 13px;
+}
+
+.produto-estoque small {
+  color: var(--texto-suave);
+  font-size: 11px;
+}
+
+.estoque-info {
+  text-align: right;
+}
+
+.estoque-info strong {
+  color: var(--vermelho);
+}
+
+/* =========================================
+   FORMULÁRIO DE PRODUTOS
+========================================= */
+
+#formulario-produto {
+  margin-top: 5px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 22px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.campo label {
+  color: var(--cinza-escuro);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+
+  background: white;
+  color: var(--texto);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+
+  outline: none;
+  transition: 0.2s;
+}
+
+.campo input::placeholder {
+  color: #aaa39a;
+}
+
+.campo input:hover,
+.campo select:hover {
+  border-color: #c9bdb0;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--vermelho);
+  box-shadow: 0 0 0 3px rgba(143, 32, 40, 0.09);
+}
+
+.campo select {
+  cursor: pointer;
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.form-acoes {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 30px;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--borda);
+}
+
+.botao-principal {
+  min-height: 46px;
+  padding: 0 26px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: var(--vermelho);
+  color: white;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao-principal:hover {
+  background: var(--vermelho-escuro);
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   TABELA DE PRODUTOS
+========================================= */
+
+.painel-listagem {
+  margin-top: 22px;
+}
+
+.tabela-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tabela-produtos {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tabela-produtos thead {
+  background: var(--preto);
+  color: var(--branco);
+}
+
+.tabela-produtos th {
+  padding: 15px 13px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.tabela-produtos td {
+  padding: 16px 13px;
+  border-bottom: 1px solid var(--borda);
+  font-size: 12px;
+}
+
+.tabela-produtos tbody tr:hover {
+  background: #f8f3eb;
+}
+
+.tabela-produtos tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 35px;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--borda);
+
+  color: var(--texto-suave);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1100px) {
+  .indicadores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .main-content {
+    padding: 28px 22px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .form-acoes {
+    justify-content: stretch;
+  }
+
+  .botao-principal {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .logo {
+    padding-bottom: 18px;
+  }
+
+  .menu-section {
+    margin-top: 20px;
+  }
+
+  .menu-section nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .menu-item {
+    padding: 10px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main-content {
+    padding: 25px 16px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .indicadores {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   IMPRESSÃO DO COMPROVANTE - TANCA TP-620
+========================================= */
+
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 80mm !important;
+    min-width: 80mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #comprovante-container,
+  #comprovante-container * {
+    visibility: visible !important;
+  }
+
+  #comprovante-container {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 72mm !important;
+    max-width: 72mm !important;
+    min-width: 72mm !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    background: white !important;
+    color: black !important;
+  }
+
+  #comprovante-container .painel-header,
+  #comprovante-container .form-acoes {
+    display: none !important;
+  }
+
+  .comprovante {
+    display: block !important;
+    width: 72mm !important;
+    max-width: 72mm !important;
+
+    margin: 0 !important;
+    padding: 2mm !important;
+
+    background: white !important;
+    color: black !important;
+
+    font-family: "Courier New", monospace !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+
+    overflow: visible !important;
+  }
+
+  .comprovante h3 {
+    margin: 0 0 3px !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+  }
+
+  .comprovante h4 {
+    margin: 8px 0 6px !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+  }
+
+  .comprovante p {
+    display: block !important;
+    width: 100% !important;
+    margin: 3px 0 !important;
+    padding: 0 !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+  }
+
+  .comprovante > p:first-of-type {
+    text-align: center !important;
+  }
+
+  .comprovante hr {
+    display: block !important;
+    width: 100% !important;
+
+    margin: 8px 0 !important;
+
+    border: none !important;
+    border-top: 1px dashed black !important;
+  }
+
+  .comprovante-item {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 9px !important;
+    padding: 0 !important;
+
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .comprovante-item strong {
+    display: block !important;
+    font-size: 11px !important;
+  }
+
+  .comprovante-item > div {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+
+    width: 100% !important;
+    font-size: 10px !important;
+  }
+
+  .comprovante-item span {
+    white-space: nowrap !important;
+    font-weight: bold !important;
+  }
+
+  .comprovante strong {
+    font-weight: bold !important;
+  }
+
+  .comprovante * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}

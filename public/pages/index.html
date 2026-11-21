@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDV Frigorífico | Painel</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="layout">
+      <!-- MENU LATERAL -->
+      <aside class="sidebar">
+        <div class="logo">
+          <span class="logo-icon">✦</span>
+          <div>
+            <h2>FRIGORÍFICO</h2>
+            <span>GESTÃO PREMIUM</span>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <span class="menu-title">MENU PRINCIPAL</span>
+
+          <nav>
+            <a href="/" class="menu-item ativo"> <span>▦</span> Painel </a>
+
+            <a href="/pages/produtos.html" class="menu-item">
+              <span>◈</span> Produtos
+            </a>
+
+            <a href="/pages/categorias.html" class="menu-item">
+              <span>▤</span> Categorias
+            </a>
+
+            <a href="/pages/estoque.html" class="menu-item">
+              <span>⇄</span> Estoque
+            </a>
+
+            <a href="/pages/vendas.html" class="menu-item">
+              <span>🛒</span> Vendas
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <span>PDV FRIGORÍFICO</span>
+          <small>Sistema de gestão comercial</small>
+        </div>
+      </aside>
+
+      <!-- CONTEÚDO PRINCIPAL -->
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <span class="breadcrumb">GESTÃO / PAINEL</span>
+            <h1>Painel de controle</h1>
+            <p>Acompanhe o desempenho do seu frigorífico.</p>
+          </div>
+
+          <div class="topbar-info">
+            <span id="data-atual"></span>
+          </div>
+        </header>
+
+        <!-- INDICADORES -->
+        <section class="indicadores">
+          <article class="card-indicador">
+            <span>Vendas de hoje</span>
+            <h2 id="quantidade-vendas">0</h2>
+            <small>Vendas realizadas</small>
+          </article>
+
+          <article class="card-indicador destaque">
+            <span>Faturamento de hoje</span>
+            <h2 id="faturamento-total">R$ 0,00</h2>
+            <small>Total vendido no dia</small>
+          </article>
+
+          <article class="card-indicador">
+            <span>Ticket médio</span>
+            <h2 id="ticket-medio">R$ 0,00</h2>
+            <small>Média por venda</small>
+          </article>
+
+          <article class="card-indicador">
+            <span>Mais vendido</span>
+            <h2 id="produto-mais-vendido">---</h2>
+            <small>Produto em destaque</small>
+          </article>
+        </section>
+
+        <!-- ÁREA INFERIOR -->
+        <section class="dashboard-grid">
+          <article class="painel">
+            <div class="painel-header">
+              <div>
+                <span class="subtitulo">ACOMPANHAMENTO</span>
+                <h2>Estoque baixo</h2>
+              </div>
+
+              <a href="/pages/estoque.html" class="link-painel">
+                Ver estoque
+              </a>
+            </div>
+
+            <div id="lista-estoque-baixo">
+              <p class="mensagem-vazia">Carregando informações do estoque...</p>
+            </div>
+          </article>
+
+          <article class="painel">
+            <div class="painel-header">
+              <div>
+                <span class="subtitulo">MOVIMENTAÇÃO</span>
+                <h2>Acesso rápido</h2>
+              </div>
+            </div>
+
+            <div class="atalhos">
+              <a href="/pages/produtos.html" class="atalho">
+                <span>◈</span>
+                <div>
+                  <strong>Produtos</strong>
+                  <small>Gerenciar catálogo</small>
+                </div>
+              </a>
+
+              <a href="/pages/vendas.html" class="atalho">
+                <span>🛒</span>
+                <div>
+                  <strong>Nova venda</strong>
+                  <small>Registrar atendimento</small>
+                </div>
+              </a>
+
+              <a href="/pages/estoque.html" class="atalho">
+                <span>⇄</span>
+                <div>
+                  <strong>Estoque</strong>
+                  <small>Registrar movimentação</small>
+                </div>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="footer">
+          <span>PDV FRIGORÍFICO</span>
+          <span>Gestão, qualidade e tradição.</span>
+        </footer>
+      </main>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
