@@ -1,6 +1,6 @@
 const Produto = require("./Produto");
 const Categoria = require("./Categoria");
-const Venda = require("./venda");
+const Venda = require("./Venda");
 const ItemVenda = require("./ItemVenda");
 const MovimentacaoEstoque = require("./MovimentacaoEstoque");
 
